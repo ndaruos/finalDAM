@@ -1,14 +1,16 @@
+const supabase = require("../config/supabase");
 
+console.log("Servicio")
 
-
-const libros = [
-  {id: 1, nombre: 'Alicia en el pais', Autor: 'Xxx'}
-];
-
-
-const obtenerTodos = () => {
-    return libros
+// Devolver todos
+const obtenerTodos = async() => {
+    const { data, error } = await supabase
+    .from('libros')
+    .select('*');
+    if (error) throw error;
+    return data;
 };
+
 
 
 module.exports = { obtenerTodos };

@@ -1,9 +1,19 @@
 
 const service = require('../services/librosService');
 
-const obtenerTodos = (req,res) => {
-    const libros = service.obtenerTodos();
-    res.json(libros);
+console.log("Controlador")
+
+const obtenerTodos = async (req,res) => {
+
+    try {
+        const libros = await service.obtenerTodos();
+        res.json(libros);
+    } 
+    catch(error){
+
+        res.status(500).json({error:"Error al obtener todos los libros."})
+    }
 };
+
 
 module.exports = { obtenerTodos };
