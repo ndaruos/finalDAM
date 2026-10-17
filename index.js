@@ -10,6 +10,8 @@ app.use(cors());
 //   res.json({ mensaje: 'Servidor Proyecto Final funcionando ✅' });
 // });
 
+require('dotenv').config();
+
 app.use(
   '/api/libros',
   require('./routes/librosRoutes')
