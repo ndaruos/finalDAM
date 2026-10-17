@@ -5,9 +5,10 @@ const cors = require('cors');
 
 app.use(express.json())
 app.use(cors()); 
-//Primera validación de conexión en local con el server app
-// app.get('/', (req, res) => {
-//   res.json({ mensaje: 'Servidor Proyecto Final funcionando ✅' });
+
+// Primera validación de conexión en local con el server app
+ app.get('/', (req, res) => {
+   res.json({ mensaje: 'Servidor Proyecto Final funcionando ✅' });
 // });
 
 require('dotenv').config();
