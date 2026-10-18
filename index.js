@@ -13,11 +13,18 @@ app.use(cors());
 
 require('dotenv').config();
 
+
+//Vamos a ir hasta la tabla de libros en Supabase. 
 app.use(
   '/api/libros',
   require('./routes/librosRoutes')
 );
 
+//Vamos a ir hasta la tabla de usuarios Supabase. 
+app.use(
+  '/api/usuarios',
+  require('./routes/usuariosRoutes')
+);
 
 app.listen(3000, () => {
   console.log('Servidor corriendo en puerto 3000. Proyecto Final');
