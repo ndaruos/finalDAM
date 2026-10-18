@@ -11,6 +11,9 @@ console.log("Servicio Usuarios");
 // Al ser async, permite usar await internamente para esperar las respuestas de la base de datos.
 
 const login = async (usuario, clave) => {
+    console.log(usuario)
+    console.log(clave)
+    
     const { data, error } = await supabase
         .from('usuarios')
         .select('*')
