@@ -25,6 +25,18 @@ const crear = async(libro) => {
 
 }
 
+const actualizar = async(libro) => {
+
+    const {data, error} = await supabase
+    .from('libros')
+    .update(libro)
+    .eq('libro_codigo', libro.libro_codigo)
+    .select()
+
+    if (error) throw error;
+    return data
+}
 
 
-module.exports = { obtenerTodos, crear };
+
+module.exports = { obtenerTodos, crear, actualizar };
