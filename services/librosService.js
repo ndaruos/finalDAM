@@ -11,6 +11,20 @@ const obtenerTodos = async() => {
     return data;
 };
 
+//Crear libro nuevo
+
+const crear = async(libro) => {
+
+    const {data, error} = await supabase
+    .from('libros')
+    .insert(libro)
+    .select()
+
+    if (error) throw error;
+    return data
+
+}
 
 
-module.exports = { obtenerTodos };
+
+module.exports = { obtenerTodos, crear };

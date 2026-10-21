@@ -15,5 +15,17 @@ const obtenerTodos = async (req,res) => {
     }
 };
 
+const crear = async (req,res) => {
 
-module.exports = { obtenerTodos };
+    try {
+        const libros = await service.crear(req.body);
+        res.json(libros);
+    } 
+    catch(error){
+
+        res.status(500).json({error:"Error al crear libro."})
+    }
+};
+
+
+module.exports = { obtenerTodos, crear };

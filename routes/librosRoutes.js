@@ -7,5 +7,6 @@ const router = express.Router();
 const ctrl = require('../controllers/librosController');
 
 router.get('/', ctrl.obtenerTodos);
+router.post('/crear', ctrl.crear);
 
 module.exports = router;
