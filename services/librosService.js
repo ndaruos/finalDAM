@@ -37,6 +37,17 @@ const actualizar = async(libro) => {
     return data
 }
 
+const eliminar = async(libro) => {
+
+    const {data,error} = await supabase
+    .from ('libros')
+    .delete()
+    .eq('libro_codigo', libro.libro_codigo)
+    .select()
+
+    if (error) throw error;
+    return data
+}
 
 
-module.exports = { obtenerTodos, crear, actualizar };
+module.exports = { obtenerTodos, crear, actualizar, eliminar };

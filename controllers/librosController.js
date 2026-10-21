@@ -34,10 +34,23 @@ const actualizar = async(req,res) => {
         return res.status(200).json(libroActualizado)
  
     } catch(error){
-
+        console.log(error)
         return res.status(500).json({error: 'Error al actualizar el libro.'})
     }    
 }
 
+const eliminar = async(req, res) => {
 
-module.exports = { obtenerTodos, crear, actualizar };
+    try{
+        const productoEliminado = await service.eliminar(req.body)
+        return res.status(200).json(productoEliminado)
+
+    }catch{
+
+        return res.status(500).json({error: 'Error al eliminar el libro.'})
+
+    }
+}
+
+
+module.exports = { obtenerTodos, crear, actualizar, eliminar };
