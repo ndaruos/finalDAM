@@ -9,6 +9,6 @@ const ctrl = require('../controllers/librosController');
 router.get('/', ctrl.obtenerTodos);
 router.post('/crear', ctrl.crear);
 router.put('/actualizar', ctrl.actualizar);
-router.delete('/eliminar', ctrl.eliminar);
+router.delete('/eliminar/:id', ctrl.eliminar);
 
 module.exports = router;

@@ -37,12 +37,12 @@ const actualizar = async(libro) => {
     return data
 }
 
-const eliminar = async(libro) => {
+const eliminar = async(id) => {
 
     const {data,error} = await supabase
     .from ('libros')
     .delete()
-    .eq('libro_codigo', libro.libro_codigo)
+    .eq('libro_codigo', id)
     .select()
 
     if (error) throw error;

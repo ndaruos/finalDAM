@@ -42,7 +42,7 @@ const actualizar = async(req,res) => {
 const eliminar = async(req, res) => {
 
     try{
-        const productoEliminado = await service.eliminar(req.body)
+        const productoEliminado = await service.eliminar(req.params.id)
         return res.status(200).json(productoEliminado)
 
     }catch{
