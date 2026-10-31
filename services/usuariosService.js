@@ -3,9 +3,7 @@ const supabase = require("../config/supabase");
 console.log("Servicio Usuarios");
 
 const login = async (usuario, clave) => {
-    console.log(usuario)
-    console.log(clave)
-    
+
     const { data, error } = await supabase
         .from('usuarios')
         .select('*')
