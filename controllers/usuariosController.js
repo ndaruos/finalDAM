@@ -6,7 +6,6 @@ const login = async (req, res) => {
     try {
         const { usuario, clave } = req.body;
 
-        // Llamamos a la función login del servicio
         const resultado = await service.login(usuario, clave);
 
         res.json(resultado);
