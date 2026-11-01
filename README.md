@@ -15,3 +15,7 @@ Clonar el repositorio e ingresar a la carpeta del proyecto. Vía CMD correr los 
    git clone https://github.com/ndaruos/finalDAM.git
    cd finalDAM
    code .
+
+Instalar las dependencias con comando: npm install
+
+Renombrar el .env.example a .env y agregar las llaves correspondientes de Supabase
